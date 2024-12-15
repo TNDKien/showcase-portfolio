@@ -1,0 +1,53 @@
+@import 'app/styles/variables';
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background: transparent;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid #5D3FD3;
+        }
+
+        .name {
+            font-size: 1rem;
+            font-weight: 500;
+            color: $offWhite;
+
+            .status {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background-color: #00ff00;
+                border-radius: 50%;
+                margin-left: 0.5rem;
+            }
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 4rem;
+
+        a {
+            color: #F8F9FA;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+    }
+}

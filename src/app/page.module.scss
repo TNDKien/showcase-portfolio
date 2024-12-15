@@ -1,4 +1,4 @@
-@import '../app/styles/variables.scss';
+@import '/src/app/styles/variables.scss';
 
 .heroSection {
   display: flex;
@@ -51,7 +51,7 @@
         font-weight: bold;
         color: $onyx; 
         -webkit-text-stroke: 4px transparent;
-        background: linear-gradient(90deg, $burgundy, $iris); 
+        background: linear-gradient(45deg, $burgundy 0%, $burgundy 10%, $iris 70%, $iris 100%);
         -webkit-background-clip: text;
         background-clip: text;
   
@@ -71,7 +71,7 @@
 }
 
 .gradientText {
-  background: linear-gradient(90deg, $burgundy, $iris);
+  background: linear-gradient(45deg, $burgundy 0%, $burgundy 10%, $iris 70%, $iris 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
