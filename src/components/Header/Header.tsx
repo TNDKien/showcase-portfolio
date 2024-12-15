@@ -1,13 +1,30 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.scss";
-import { FiExternalLink } from "react-icons/fi"; // External link icon
+import { FiExternalLink } from "react-icons/fi";
 
 export default function Header() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10); // Show when scrolling up or near the top
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${isVisible ? styles.show : styles.hide}`}
+    >
       <div className={styles.profile}>
         <Image
           src="/placeholder.svg"

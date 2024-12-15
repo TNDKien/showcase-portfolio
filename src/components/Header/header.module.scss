@@ -5,11 +5,22 @@
     top: 0;
     width: 100%;
     z-index: 50;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.8); // Semi-transparent black background
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: transform 0.3s ease, opacity 0.3s ease; // Smooth transition for show/hide
+
+    &.show {
+        transform: translateY(0); // Reset to visible
+        opacity: 1;
+    }
+
+    &.hide {
+        transform: translateY(-100%); // Move out of view
+        opacity: 0; // Optional: fade out while hidden
+    }
 
     .profile {
         display: flex;
@@ -20,7 +31,7 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            border: 2px solid #5D3FD3;
+            border: 2px solid $iris;
         }
 
         .name {
@@ -41,13 +52,18 @@
 
     .nav-links {
         display: flex;
-        gap: 4rem;
+        gap: 2rem;
 
         a {
-            color: #F8F9FA;
+            color: $offWhite;
             font-size: 1rem;
             font-weight: 400;
+            text-decoration: none;
             transition: color 0.3s ease;
+
+            &:hover {
+                color: $iris;
+            }
         }
     }
 }
