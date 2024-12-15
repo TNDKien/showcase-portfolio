@@ -12,7 +12,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
       setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10); // Show when scrolling up or near the top
       setPrevScrollPos(currentScrollPos);
     };
@@ -26,17 +26,18 @@ export default function Header() {
       className={`${styles.header} ${isVisible ? styles.show : styles.hide}`}
     >
       <div className={styles.profile}>
-        <Image
-          src="/placeholder.svg"
-          alt="Profile"
-          width={48}
-          height={48}
-          className="rounded-full"
-        />
-        <div className={styles.name}>
-          Kien Dang
+        <div className={styles.imageContainer}>
+          <Image
+            src="/medias/KienDang.webp"
+            alt="Profile"
+            width={96}
+            height={96}
+            quality={100}
+          />
           <span className={styles.status}></span>
         </div>
+
+        <div className={styles.name}>Kien Dang</div>
       </div>
       <nav className={styles.navLinks}>
         <Link href="#about">About me</Link>

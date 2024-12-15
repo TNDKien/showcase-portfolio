@@ -1,69 +1,83 @@
-@import 'app/styles/variables';
+@import "app/styles/variables";
 
 .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-    background: rgba(0, 0, 0, 0.8); // Semi-transparent black background
-    padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 32px 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  &.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &.hide {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  .profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .imageContainer {
+      position: relative;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(45deg, $burgundy 0%, $iris 100%);
+      width: 96px;
+      height: 96px;
+
+      img {
+        display: block;
+        border-radius: 50%;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        background-color: $onyx;
+      }
+      .status {
+        position: absolute;
+        bottom: 6px;
+        right: 6px;
+        width: 24px;
+        height: 24px;
+        background-color: #40ac7b;
+        border-radius: 50%;
+        border: 3px solid $onyx;
+      }
+    }
+
+    .name {
+      font-family: "Degular Display", sans-serif;
+      font-size: clamp(16px, 3vw, 32px);
+      font-weight: medium;
+      color: $offWhite;
+    }
+  }
+
+  .navLinks {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s ease, opacity 0.3s ease; // Smooth transition for show/hide
+    gap: 2rem;
 
-    &.show {
-        transform: translateY(0); // Reset to visible
-        opacity: 1;
+    a {
+      color: $offWhite;
+      font-size: clamp(16px, 3vw, 32px);
+      font-weight: medium;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $iris;
+      }
     }
-
-    &.hide {
-        transform: translateY(-100%); // Move out of view
-        opacity: 0; // Optional: fade out while hidden
-    }
-
-    .profile {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-
-        img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 2px solid $iris;
-        }
-
-        .name {
-            font-size: 1rem;
-            font-weight: 500;
-            color: $offWhite;
-
-            .status {
-                display: inline-block;
-                width: 10px;
-                height: 10px;
-                background-color: #00ff00;
-                border-radius: 50%;
-                margin-left: 0.5rem;
-            }
-        }
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 2rem;
-
-        a {
-            color: $offWhite;
-            font-size: 1rem;
-            font-weight: 400;
-            text-decoration: none;
-            transition: color 0.3s ease;
-
-            &:hover {
-                color: $iris;
-            }
-        }
-    }
+  }
 }
