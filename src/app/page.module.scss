@@ -14,20 +14,20 @@
     z-index: 1;
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 32px;
       margin-bottom: 0.5rem;
       color: $offWhite;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 72px;
       font-weight: bold;
       margin-bottom: 1rem;
       @extend .gradientText; 
     }
 
     .subtitle {
-      font-size: 1.25rem;
+      font-size: 32px;
       font-weight: normal;
       color: $offWhite;
 
@@ -40,14 +40,14 @@
 
     .braces {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 15%;
+      // transform: translateY(-25%);
       display: flex;
       width: 100%;
   
       .leftBrace,
       .rightBrace {
-        font-size: 6rem;
+        font-size: 480px;
         font-weight: bold;
         color: $onyx; 
         -webkit-text-stroke: 4px transparent;
@@ -59,12 +59,12 @@
       }
   
       .leftBrace {
-        left: 10%;
+        left: 20%;
         content: "{";
       }
   
       .rightBrace {
-        right: 10%;
+        right: 20%;
         content: "}";
       }
     }
