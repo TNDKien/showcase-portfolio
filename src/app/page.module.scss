@@ -1,0 +1,78 @@
+@import '../app/styles/variables.scss';
+
+.heroSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $onyx;
+  color: $offWhite;
+  position: relative;
+
+  .heroText {
+    text-align: center;
+    z-index: 1;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: $offWhite;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      @extend .gradientText; 
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: $offWhite;
+
+      span {
+        @extend .gradientText;
+        font-weight: bold;
+      }
+    }
+  }
+
+    .braces {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      width: 100%;
+  
+      .leftBrace,
+      .rightBrace {
+        font-size: 6rem;
+        font-weight: bold;
+        color: $onyx; 
+        -webkit-text-stroke: 4px transparent;
+        background: linear-gradient(90deg, $burgundy, $iris); 
+        -webkit-background-clip: text;
+        background-clip: text;
+  
+        position: absolute;
+      }
+  
+      .leftBrace {
+        left: 10%;
+        content: "{";
+      }
+  
+      .rightBrace {
+        right: 10%;
+        content: "}";
+      }
+    }
+}
+
+.gradientText {
+  background: linear-gradient(90deg, $burgundy, $iris);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
