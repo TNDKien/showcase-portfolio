@@ -1,0 +1,76 @@
+@import 'app/styles/variables';
+
+.heroSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $onyx;
+    color: $offWhite;
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        padding: 0 2rem;
+
+        .leftBrace,
+            .rightBrace {
+                font-size: clamp(64px, 30vw, 480px);
+                font-weight: bold;
+                color: $onyx; // Black fill color
+                text-stroke: 4px transparent;
+                -webkit-text-stroke: 4px transparent;
+                -webkit-text-fill-color: $onyx; // Black fill for Webkit
+                text-fill-color: $onyx; // Black fill for non-Webkit browsers
+                background: linear-gradient(45deg, $burgundy 0%, $burgundy 10%, $iris 70%, $iris 100%);
+                -webkit-background-clip: text; // Ensures gradient is applied to stroke
+                background-clip: text;
+            }
+
+        .leftBrace {
+            margin-right: 1rem;
+        }
+
+        .rightBrace {
+            margin-left: 1rem;
+        }
+
+        .heroText {
+            text-align: center;
+
+            h2 {
+                font-size: clamp(16px, 3vw, 32px);
+                margin-bottom: 0.5rem;
+                color: $offWhite;
+            }
+
+            h1 {
+                font-size: clamp(32px, 7vw, 72px);
+                font-weight: bold;
+                margin-bottom: 1rem;
+                @extend .gradientText;
+            }
+
+            .subtitle {
+                font-size: clamp(16px, 3vw, 32px);
+                font-weight: normal;
+                color: $offWhite;
+
+                span {
+                    @extend .gradientText;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.gradientText {
+    background: linear-gradient(45deg, $burgundy 0%, $burgundy 10%, $iris 70%, $iris 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
