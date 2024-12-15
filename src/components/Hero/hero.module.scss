@@ -1,76 +1,101 @@
-@import 'app/styles/variables';
+@import "app/styles/variables";
 
 .heroSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $onyx;
+  color: $offWhite;
+
+  .content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: $onyx;
-    color: $offWhite;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding: 0 2rem;
 
-    .content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-        padding: 0 2rem;
-
-        .leftBrace,
-            .rightBrace {
-                font-size: clamp(64px, 30vw, 480px);
-                font-weight: bold;
-                color: $onyx; // Black fill color
-                text-stroke: 4px transparent;
-                -webkit-text-stroke: 4px transparent;
-                -webkit-text-fill-color: $onyx; // Black fill for Webkit
-                text-fill-color: $onyx; // Black fill for non-Webkit browsers
-                background: linear-gradient(45deg, $burgundy 0%, $burgundy 10%, $iris 70%, $iris 100%);
-                -webkit-background-clip: text; // Ensures gradient is applied to stroke
-                background-clip: text;
-            }
-
-        .leftBrace {
-            margin-right: 1rem;
-        }
-
-        .rightBrace {
-            margin-left: 1rem;
-        }
-
-        .heroText {
-            text-align: center;
-
-            h2 {
-                font-size: clamp(16px, 3vw, 32px);
-                margin-bottom: 0.5rem;
-                color: $offWhite;
-            }
-
-            h1 {
-                font-size: clamp(32px, 7vw, 72px);
-                font-weight: bold;
-                margin-bottom: 1rem;
-                @extend .gradientText;
-            }
-
-            .subtitle {
-                font-size: clamp(16px, 3vw, 32px);
-                font-weight: normal;
-                color: $offWhite;
-
-                span {
-                    @extend .gradientText;
-                    font-weight: bold;
-                }
-            }
-        }
+    .leftBrace,
+    .rightBrace {
+      font-size: clamp(64px, 30vw, 420px);
+      font-weight: bold;
+      -webkit-text-stroke: 4px transparent;
+      -webkit-text-fill-color: $onyx;
+      background: linear-gradient(45deg, $burgundy 0%, $iris 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
     }
+
+    .heroText {
+      text-align: center;
+
+      h2 {
+        font-size: clamp(16px, 3vw, 36px);
+        margin-bottom: 0.5rem;
+        color: $offWhite;
+      }
+
+      h1 {
+        font-size: clamp(32px, 6vw, 72px);
+        font-weight: bold;
+        margin-bottom: 1rem;
+        @extend .gradientText;
+      }
+
+      .animatedText {
+        position: relative;
+        display: inline-block;
+        height: 36px; // Fixed height for clean sliding
+        overflow: hidden;
+
+        p {
+          display: block;
+          margin: 0; // Remove default margin
+          line-height: 36px;
+          font-size: clamp(16px, 3vw, 36px);
+          font-weight: normal;
+          animation: slideText 6s infinite ease-in-out;
+
+          &:nth-child(2) {
+            animation-delay: 3s; // Delays the second p tag
+          }
+
+          .gradientText {
+            background: linear-gradient(45deg, $burgundy 0%, $iris 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+    }
+  }
 }
 
 .gradientText {
-    background: linear-gradient(45deg, $burgundy 0%, $burgundy 10%, $iris 70%, $iris 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(45deg, $burgundy 0%, $iris 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Sliding Animation
+@keyframes slideText {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 }

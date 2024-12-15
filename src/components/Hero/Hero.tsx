@@ -10,10 +10,15 @@ export default function Hero() {
         <div className={styles.heroText}>
           <h2>Hi, my name is</h2>
           <h1 className={styles.gradientText}>Kien Dang</h1>
-          <p className={styles.subtitle}>
-            Wannabe <span className={styles.gradientText}>Front-end</span>{" "}
-            Developer
-          </p>
+          <div className={styles.animatedText}>
+            <p>
+              Wannabe <span className={styles.gradientText}>Front-end</span>{" "}
+              Developer
+            </p>
+            <p>
+              Student @ <span className={styles.gradientText}>Fontys ICT</span>
+            </p>
+          </div>
         </div>
         <span className={styles.rightBrace}>{"}"}</span>
       </div>
