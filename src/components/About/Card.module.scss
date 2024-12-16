@@ -1,0 +1,44 @@
+@import "app/styles/variables";
+
+.card {
+  position: sticky;
+  top: 0;
+  height: 160px;
+  width: 50%;
+  max-width: 576px;
+
+  background: linear-gradient(
+    45deg,
+    $burgundy 0%,
+    $iris 100%
+  ); // Gradient background
+  border-radius: 48px; // Rounded corners
+
+  padding: 8px; // Create space for the inner element
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Inner content with solid background */
+  &::before {
+    content: "";
+    display: block;
+    background-color: $onyx; // Inner solid background color
+    border-radius: 40px; // Smaller radius for inner content
+    width: 100%;
+    height: 100%;
+    padding: 16px; // Adjust spacing
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: $offWhite;
+    position: relative;
+  }
+
+  p {
+    font-size: 1rem;
+    color: $offWhite;
+    position: relative;
+  }
+}
