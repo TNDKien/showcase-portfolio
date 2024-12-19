@@ -1,12 +1,23 @@
 @import "app/styles/variables";
 
 .projectsSection {
-  padding: 4rem 0;
-  background-color: lighten(#c0c0c0, 2%);
+  background-color: $onyx;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
   .heading {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
+    color: #ffffff;
+    font-size: 96px;
+    font-weight: 700;
+    margin: 96px 0;
+  }
+
+  .projectsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 384px;
   }
 }

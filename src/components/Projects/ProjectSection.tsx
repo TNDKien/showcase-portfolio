@@ -9,7 +9,7 @@ const projects = [
     tags: ["DESIGN", "DEVELOPMENT", "CMS"],
     description:
       "Created a responsive website for Upendo, a data services provider, to showcase their core offerings and engage SMEs and semi-governmental clients worldwide.",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "/medias/upendo.webp",
     projectUrl: "#",
     liveUrl: "#",
   },
@@ -18,36 +18,18 @@ const projects = [
     tags: ["DESIGN", "DEVELOPMENT", "CMS"],
     description:
       "Created a responsive website for Zemnmots. They have given us the assignment to make a marketing news website.",
-    imageUrl: "/placeholder.svg?height=400&width=600",
+    imageUrl: "/medias/marketingloom.webp",
     projectUrl: "#",
-    liveUrl: "#",
-  },
-  {
-    title: "Upendo (Duplicate)",
-    tags: ["DESIGN", "DEVELOPMENT", "CMS"],
-    description:
-      "Created a responsive website for Upendo, a data services provider, to showcase their core offerings and engage SMEs and semi-governmental clients worldwide.",
-    imageUrl: "/placeholder.svg?height=400&width=600",
-    projectUrl: "#",
-    liveUrl: "#",
-  },
-  {
-    title: "Marketing Loom (Duplicate)",
-    tags: ["DESIGN", "DEVELOPMENT", "CMS"],
-    description:
-      "Created a responsive website for Zemnmots. They have given us the assignment to make a marketing news website.",
-    imageUrl: "/placeholder.svg?height=400&width=600",
-    projectUrl: "#",
-    liveUrl: "#",
+    liveUrl: "http://www.marketingloom.nl",
   },
 ];
 
 export default function ProjectsSection() {
   return (
     <section className={styles.projectsSection}>
-      <div className="container">
+      <div className={styles.container}>
         <h2 className={styles.heading}>Projects</h2>
-        <div>
+        <div className={styles.projectsWrapper}>
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}

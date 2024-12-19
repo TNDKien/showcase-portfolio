@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
@@ -30,7 +29,7 @@ export function ProjectCard({
       }`}
     >
       <div className={styles.content}>
-        <h2 className={styles.title}>{title}</h2>
+        <h3 className={styles.title}>{title}</h3>
         <div className={styles.tags}>
           {tags.map((tag, index) => (
             <span key={tag}>
@@ -45,11 +44,9 @@ export function ProjectCard({
         <div className={styles.buttons}>
           <a href={projectUrl} className="btn">
             View Project
-            <ArrowUpRight className={styles.icon} />
           </a>
           <a href={liveUrl} className="btn">
-            Live site
-            <ArrowUpRight className={styles.icon} />
+            Live Site
           </a>
         </div>
       </div>
@@ -59,6 +56,7 @@ export function ProjectCard({
           alt={`Screenshot of ${title} project`}
           width={600}
           height={400}
+          priority
         />
       </div>
     </div>
