@@ -1,0 +1,66 @@
+"use client";
+
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import styles from "./ProjectCard.module.scss";
+
+interface ProjectCardProps {
+  title: string;
+  tags: string[];
+  description: string;
+  imageUrl: string;
+  projectUrl: string;
+  liveUrl: string;
+  layout: "image-right" | "image-left";
+}
+
+export function ProjectCard({
+  title,
+  tags,
+  description,
+  imageUrl,
+  projectUrl,
+  liveUrl,
+  layout,
+}: ProjectCardProps) {
+  return (
+    <div
+      className={`${styles.projectCard} ${
+        layout === "image-left" ? styles.imageLeft : ""
+      }`}
+    >
+      <div className={styles.content}>
+        <h2 className={styles.title}>{title}</h2>
+        <div className={styles.tags}>
+          {tags.map((tag, index) => (
+            <span key={tag}>
+              {tag}
+              {index < tags.length - 1 && (
+                <span className={styles.separator}>•</span>
+              )}
+            </span>
+          ))}
+        </div>
+        <p className={styles.description}>{description}</p>
+        <div className={styles.buttons}>
+          <a href={projectUrl} className="btn">
+            View Project
+            <ArrowUpRight className={styles.icon} />
+          </a>
+          <a href={liveUrl} className="btn">
+            Live site
+            <ArrowUpRight className={styles.icon} />
+          </a>
+        </div>
+      </div>
+      <div className={styles.image}>
+        <Image
+          src={imageUrl}
+          alt={`Screenshot of ${title} project`}
+          width={600}
+          height={400}
+        />
+      </div>
+    </div>
+  );
+}

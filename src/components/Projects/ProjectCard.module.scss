@@ -1,0 +1,62 @@
+@import "app/styles/variables";
+
+.projectCard {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  &.imageLeft {
+    @media (min-width: 768px) {
+      .content {
+        grid-column: 2;
+      }
+      .image {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+  }
+
+  .content {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: $iris;
+  }
+
+  .description {
+    color: $iris;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .image {
+    overflow: hidden;
+    border-radius: 48px;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+    }
+  }
+}
