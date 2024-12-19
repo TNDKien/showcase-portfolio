@@ -7,25 +7,26 @@
 }
 
 body {
-  font-family: 'Degular Display', sans-serif;
+  font-family: "Degular Display", sans-serif;
   margin: 0;
   padding: 0;
+  background: $onyx;
 }
 
 h1,
 h2,
-h3{
-  font-family: 'Degular Display', sans-serif;
+h3 {
+  font-family: "Degular Display", sans-serif;
   font-weight: bold;
-  
 }
 
-p, span {
-  font-family: 'Source Code Pro', monospace;
+p,
+span {
+  font-family: "Source Code Pro", monospace;
 }
 
 a {
-  font-family: 'Degular Display', sans-serif;
+  font-family: "Degular Display", sans-serif;
   text-decoration: none;
-  color:$offWhite;
+  color: $offWhite;
 }
