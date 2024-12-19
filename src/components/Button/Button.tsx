@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
+import styles from "./Button.module.scss";
 
 interface ButtonProps {
   href?: string;
@@ -9,13 +10,13 @@ interface ButtonProps {
 
 export default function Button({
   href = "#",
-  children = "Live site",
+  children = "View Project",
 }: ButtonProps) {
   return (
-    <a href={href} className="button">
+    <a href={href} className={styles.button}>
       <span>
         {children}
-        <ArrowUpRight className="icon" />
+        <ArrowUpRight className={styles.icon} />
       </span>
       <div>
         <div />

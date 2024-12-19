@@ -1,34 +1,55 @@
-@import "./variables.scss";
+@import "app/styles/variables";
 
 .button {
   display: inline-flex;
   position: relative;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 9999px;
-  background: #000;
+  // Add some padding so the gradient border is visible
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
   color: #fff;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  border-radius: 9999px;
+  transition: all 0.4s ease-in-out;
+  z-index: 0; // Ensure pseudo-elements can be placed behind
+
+  // Permanent gradient border
+  background: linear-gradient(to right, #7e22ce, #db2777);
+
+  // Inner dark background layer
+  &::before {
+    content: "";
+    position: absolute;
+    // Inset slightly to show the gradient border
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 9999px;
+    background: #000;
+    z-index: 0;
+  }
 
   span {
     position: relative;
-    z-index: 10;
+    z-index: 100;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
   }
 
+  // The div:nth-of-type(1) and div:nth-of-type(2) can still be used for hover effects
+  // They will appear over the permanent gradient border
   div:nth-of-type(1) {
     position: absolute;
     inset: 0;
+    z-index: 10;
     border-radius: 9999px;
     background: linear-gradient(to right, #7e22ce, #db2777);
     padding: 1px;
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
 
     > div {
       width: 100%;
