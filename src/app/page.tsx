@@ -4,6 +4,8 @@ import Hero from "../components/Hero/Hero";
 import Header from "../components/Header/Header";
 import About from "../components/About/About";
 import ProjectSection from "../components/Projects/ProjectSection";
+import Blog from "../components/Blog/Blog";
+import Contact from "../components/Contact/Contact";
 
 export default function Home() {
   return (
@@ -11,7 +13,8 @@ export default function Home() {
       <Hero />
       <About />
       <ProjectSection />
-      <Hero></Hero>
+      <Blog />
+      <Contact />
     </div>
   );
 }
