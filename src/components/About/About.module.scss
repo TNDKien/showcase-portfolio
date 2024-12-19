@@ -1,8 +1,70 @@
 @import "app/styles/variables";
 
-.main {
-  height: 300vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  padding: 96px;
+  gap: 96px;
+  height: 300vh;
+
+  .cardText {
+    position: sticky;
+    top: 5vh;
+    flex: 1;
+    max-width: 576px;
+    height: fit-content;
+
+    .contentWrapper {
+      position: relative;
+      padding: 24px;
+      box-sizing: border-box;
+
+      // Gradient is on the contentWrapper
+      background: linear-gradient(45deg, $burgundy 0%, $iris 100%);
+      border-radius: 48px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      z-index: 0; // Base layer
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        background-color: $onyx;
+        border-radius: 40px;
+        z-index: 1; // Above gradient, below text
+      }
+
+      p {
+        position: relative;
+        z-index: 2; // Above ::before
+        font-size: 1rem;
+        line-height: 1.5;
+        color: $offWhite;
+        margin-bottom: 16px;
+      }
+    }
+
+    .skills {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  .cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+  }
 }

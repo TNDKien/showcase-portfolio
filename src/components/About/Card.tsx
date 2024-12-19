@@ -17,8 +17,10 @@ const Card = ({ title, text, index }: CardProps) => {
         top: `calc(5vh + ${index * 25}px)`,
       }}
     >
-      <h2>{title}</h2>
-      <p>{text}</p>
+      <div className={styles.contentWrapper}>
+        <h2>{title}</h2>
+        <p>{text}</p>
+      </div>
     </div>
   );
 };
