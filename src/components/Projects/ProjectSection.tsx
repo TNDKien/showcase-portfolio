@@ -22,6 +22,24 @@ const projects = [
     projectUrl: "#",
     liveUrl: "http://www.marketingloom.nl",
   },
+  {
+    title: "Upendo",
+    tags: ["DESIGN", "DEVELOPMENT", "CMS"],
+    description:
+      "Created a responsive website for Upendo, a data services provider, to showcase their core offerings and engage SMEs and semi-governmental clients worldwide.",
+    imageUrl: "/medias/upendo.webp",
+    projectUrl: "#",
+    liveUrl: "#",
+  },
+  {
+    title: "Marketing Loom",
+    tags: ["DESIGN", "DEVELOPMENT", "CMS"],
+    description:
+      "Created a responsive website for Zemnmots. They have given us the assignment to make a marketing news website.",
+    imageUrl: "/medias/marketingloom.webp",
+    projectUrl: "#",
+    liveUrl: "http://www.marketingloom.nl",
+  },
 ];
 
 export default function ProjectsSection() {

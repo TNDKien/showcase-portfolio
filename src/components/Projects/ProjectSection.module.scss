@@ -2,22 +2,30 @@
 
 .projectsSection {
   background-color: $onyx;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 16px;
 
   .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1248px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
   }
 
   .heading {
     color: #ffffff;
     font-size: 96px;
     font-weight: 700;
-    margin: 96px 0;
+    margin: 0;
+    text-align: start;
   }
 
   .projectsWrapper {
     display: flex;
     flex-direction: column;
-    gap: 384px;
+    gap: 96px;
   }
 }

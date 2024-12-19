@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import styles from "./ProjectCard.module.scss";
+import Button from "../Button/Button";
 
 interface ProjectCardProps {
   title: string;
@@ -41,13 +42,10 @@ export function ProjectCard({
           ))}
         </div>
         <p className={styles.description}>{description}</p>
+
         <div className={styles.buttons}>
-          <a href={projectUrl} className="btn">
-            View Project
-          </a>
-          <a href={liveUrl} className="btn">
-            Live Site
-          </a>
+          <Button href={projectUrl}></Button>
+          <Button href={liveUrl}>Live Demo</Button>
         </div>
       </div>
       <div className={styles.image}>
