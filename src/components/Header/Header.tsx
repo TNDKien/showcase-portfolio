@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./header.module.scss";
+import styles from "./Header.module.scss";
 import { FiExternalLink } from "react-icons/fi";
 
 export default function Header() {

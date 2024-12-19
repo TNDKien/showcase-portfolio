@@ -2,19 +2,14 @@
 
 import React from "react";
 import styles from "./About.module.scss";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaBootstrap,
-  FaFigma,
-  //   FaAdobe,
-} from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJs, FaFigma } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiNextdotjs,
   SiAdobeillustrator,
-  //   SiPhotoshop,
+  SiSass,
+  SiStoryblok,
+  SiAdobephotoshop,
 } from "react-icons/si";
 import { cards } from "../../app/data/cards";
 import Card from "./Card";
@@ -40,16 +35,18 @@ const About = () => {
           </p>
         </div>
         {/* Skills section */}
+        <h2 className={styles.alt}>With my skills in:</h2>
         <div className={styles.skills}>
-          <FaHtml5 size={48} color="#E34F26" title="HTML5" />
-          <FaCss3Alt size={48} color="#1572B6" title="CSS3" />
-          <FaJs size={48} color="#F7DF1E" title="JavaScript" />
-          <SiTailwindcss size={48} color="#06B6D4" title="Tailwind CSS" />
-          <SiNextdotjs size={48} color="#000000" title="Next.js" />
-          <FaFigma size={48} color="#F24E1E" title="Figma" />
-          {/* <SiPhotoshop size={48} color="#31A8FF" title="Photoshop" /> */}
-          <SiAdobeillustrator size={48} color="#FF9A00" title="Illustrator" />
-          <FaBootstrap size={48} color="#7952B3" title="Bootstrap" />
+          <FaHtml5 size={86} color="#E34F26" title="HTML5" />
+          <FaCss3Alt size={86} color="#1B73BA" title="CSS3" />
+          <FaJs size={86} color="#F0DB4F" title="JavaScript" />
+          <FaFigma size={86} color="#ECECEC" title="Figma" />
+          <SiAdobeillustrator size={86} color="#FF9A00" title="Illustrator" />
+          <SiAdobephotoshop size={86} color="#31A8FF" title="Photoshop" />
+          <SiNextdotjs size={86} color="#ECECEC" title="Next.js" />
+          <SiTailwindcss size={86} color="#06B6D4" title="Tailwind CSS" />
+          <SiStoryblok size={86} color="#03B4B0" title="Storyblok" />
+          <SiSass size={86} color="#CC6699" title="Sass/SCSS" />
         </div>
       </section>
 

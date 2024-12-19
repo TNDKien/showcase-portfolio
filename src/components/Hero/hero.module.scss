@@ -21,7 +21,7 @@
       font-size: clamp(64px, 30vw, 420px);
       font-weight: bold;
       color: $onyx;
-      -webkit-text-stroke: 4px transparent;
+      -webkit-text-stroke: 8px transparent;
       -webkit-text-fill-color: $onyx;
       background: linear-gradient(
         45deg,
@@ -30,7 +30,7 @@
         $iris 70%,
         $iris 100%
       );
-      -webkit-background-clip: text; // Ensures gradient is applied to stroke
+      -webkit-background-clip: text;
       background-clip: text;
       margin-bottom: 48px;
     }

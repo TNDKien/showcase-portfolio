@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./hero.module.scss";
+import styles from "./Hero.module.scss";
 
 export default function Hero() {
   return (

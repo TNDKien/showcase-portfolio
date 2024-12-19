@@ -20,12 +20,11 @@
       padding: 24px;
       box-sizing: border-box;
 
-      // Gradient is on the contentWrapper
       background: linear-gradient(45deg, $burgundy 0%, $iris 100%);
       border-radius: 48px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      z-index: 0; // Base layer
+      z-index: 0;
 
       &::before {
         content: "";
@@ -36,28 +35,34 @@
         bottom: 8px;
         background-color: $onyx;
         border-radius: 40px;
-        z-index: 1; // Above gradient, below text
+        z-index: 1;
       }
 
       p {
         position: relative;
-        z-index: 2; // Above ::before
+        z-index: 2;
         font-size: 1rem;
         line-height: 1.5;
         color: $offWhite;
         margin-bottom: 16px;
       }
     }
+    .alt {
+      font-size: 24px;
+      font-weight: 500;
+      color: $offWhite;
+      padding: 16px 24px;
+    }
 
     .skills {
-      margin-top: 24px;
+      margin: 0 24px;
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 24px;
 
       img {
-        width: 48px;
-        height: 48px;
+        width: 72px;
+        height: 72px;
       }
     }
   }
