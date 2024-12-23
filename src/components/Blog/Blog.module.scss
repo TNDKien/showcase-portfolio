@@ -33,7 +33,13 @@
         text-align: start;
         cursor: pointer;
         overflow: hidden;
-        background: linear-gradient(to right, #7e22ce, #db2777);
+        background: linear-gradient(
+          45deg,
+          $burgundy 0%,
+          $burgundy 10%,
+          $iris 70%,
+          $iris 100%
+        );
         transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 
         &::before {
@@ -53,7 +59,7 @@
             inset: 0;
           }
 
-          box-shadow: 0 0 2rem 0.6rem rgba(126, 34, 206, 0.6);
+          box-shadow: 0 0 2rem 0.6rem rgba(93, 63, 211, 0.4);
         }
 
         h3,
