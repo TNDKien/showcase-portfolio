@@ -1,0 +1,134 @@
+@import "./styles/variables.scss";
+
+.container {
+  margin-top: 160px;
+  min-height: 100vh;
+  background: $onyx;
+  color: $offWhite;
+  padding: 2rem;
+}
+
+.project {
+  max-width: 1248px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .tags {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 4rem;
+
+    span {
+      color: $iris;
+      font-size: 0.875rem;
+
+      &:not(:last-child)::after {
+        content: "•";
+        margin-left: 1rem;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .section {
+    margin-bottom: 4rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p,
+    .list {
+      color: $offWhite;
+      line-height: 2;
+      max-width: 600px;
+    }
+  }
+  .desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    .browser {
+      width: 612px;
+      height: 344px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: $offWhite;
+
+      .browserHeader {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 0.5rem;
+        background: $offWhite;
+        border-bottom: 1px solid $offWhite;
+
+        .dot {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: $offWhite;
+
+          &:first-child {
+            background: #ef4444;
+          }
+          &:nth-child(2) {
+            background: #f59e0b;
+          }
+          &:nth-child(3) {
+            background: #22c55e;
+          }
+        }
+      }
+
+      .browserImage {
+        width: 100%;
+        img {
+          border-radius: 0 0 8px 8px;
+        }
+      }
+    }
+  }
+
+  .mobile {
+    margin-top: 6rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .devices {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+
+      .deviceGroup {
+        display: flex;
+        gap: 1rem;
+        transform: rotate(-30deg);
+
+        img {
+          width: 200px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+.decorativeLine {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 40%;
+  height: auto;
+  opacity: 0.1;
+  pointer-events: none;
+}

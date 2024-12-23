@@ -1,4 +1,3 @@
-// data.js
 export const cards = [
   {
     title: "1. Concept Development",
