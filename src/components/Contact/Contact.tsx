@@ -5,13 +5,13 @@ import styles from "./Contact.module.scss";
 
 export default function Contact() {
   return (
-    <div className={styles.contactSection}>
+    <section id="contact" className={styles.contactSection}>
       <article className={styles.content}>
         <h1 className={styles.gradientText}>Contact</h1>
         <p>Get in touch with me via social media or send me an email</p>
-        <p className={styles.gradientText}>
-          <span>kien.tn.dang@gmail.com</span>
-        </p>
+
+        <span>kien.tn.dang@gmail.com</span>
+
         {/* Social Media Icons */}
         <div className={styles.socialIcons}>
           <a
@@ -23,7 +23,7 @@ export default function Contact() {
             <FaInstagram size={48} color="#800020" title="Instagram" />
           </a>
           <a
-            href="https://www.linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/kien-dang-449887173"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -31,7 +31,7 @@ export default function Contact() {
             <FaLinkedin size={48} color="#5D3FD3" title="LinkedIn" />
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/TNDKien"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -40,6 +40,6 @@ export default function Contact() {
           </a>
         </div>
       </article>
-    </div>
+    </section>
   );
 }

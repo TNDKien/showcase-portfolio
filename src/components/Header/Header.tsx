@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import styles from "./Header.module.scss";
+import { Link as ScrollLink } from "react-scroll";
 import { FiExternalLink } from "react-icons/fi";
+import styles from "./Header.module.scss";
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
@@ -40,13 +40,37 @@ export default function Header() {
         <div className={styles.name}>Kien Dang</div>
       </div>
       <nav className={styles.navLinks}>
-        <Link href="#about">About me</Link>
-        <Link href="#projects">Projects</Link>
-        <Link href="#socials">Socials</Link>
-        <Link href="https://blog.kiendang.nl" className={styles.external}>
+        <ScrollLink
+          to="about"
+          smooth={true}
+          duration={800}
+          spy={true}
+          offset={-100}
+        >
+          About me
+        </ScrollLink>
+        <ScrollLink
+          to="projects"
+          smooth={true}
+          duration={800}
+          spy={true}
+          offset={-100}
+        >
+          Projects
+        </ScrollLink>
+        <ScrollLink
+          to="contact"
+          smooth={true}
+          duration={800}
+          spy={true}
+          offset={-100}
+        >
+          Contact
+        </ScrollLink>
+        <a href="https://blog.kiendang.nl" className={styles.external}>
           Blog
           <FiExternalLink />
-        </Link>
+        </a>
       </nav>
     </header>
   );

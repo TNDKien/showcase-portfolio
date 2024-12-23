@@ -16,7 +16,7 @@ import Card from "./Card";
 
 const About = () => {
   return (
-    <main className={styles.container}>
+    <section id="about" className={styles.container}>
       {/* Left Section */}
       <section className={styles.cardText}>
         <div className={styles.contentWrapper}>
@@ -56,7 +56,7 @@ const About = () => {
           <Card key={index} {...card} index={index} />
         ))}
       </section>
-    </main>
+    </section>
   );
 };
 

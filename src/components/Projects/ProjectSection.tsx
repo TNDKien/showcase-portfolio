@@ -10,23 +10,23 @@ const projects = [
     description:
       "Created a responsive website for Upendo, a data services provider, to showcase their core offerings and engage SMEs and semi-governmental clients worldwide.",
     imageUrl: "/medias/upendo.webp",
-    projectUrl: "#",
-    liveUrl: "#",
+    projectUrl: "/projects/upendo",
+    liveUrl: "https://upendo-one.vercel.app/",
   },
   {
     title: "Marketing Loom",
     tags: ["DESIGN", "DEVELOPMENT", "CMS"],
     description:
-      "Created a responsive website for Zemnmots. They have given us the assignment to make a marketing news website.",
+      "Created a responsive website for 2manydots. They have given us the assignment to make a marketing news website.",
     imageUrl: "/medias/marketingloom.webp",
-    projectUrl: "#",
+    projectUrl: "/projects/marketingloom",
     liveUrl: "http://www.marketingloom.nl",
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section className={styles.projectsSection}>
+    <section id="projects" className={styles.projectsSection}>
       <div className={styles.container}>
         <h2 className={styles.heading}>Projects</h2>
         <div className={styles.projectsWrapper}>
