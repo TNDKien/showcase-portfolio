@@ -3,9 +3,11 @@
 .header {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  margin: 32px auto;
+  max-width: 1248px;
   z-index: 50;
-  padding: 32px 96px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +24,6 @@
   }
 
   .profile {
-    position: relative;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -43,6 +44,7 @@
         height: 100%;
         background-color: $onyx;
       }
+
       .status {
         position: absolute;
         bottom: 6px;
@@ -65,7 +67,6 @@
 
   .navLinks {
     display: flex;
-    justify-content: space-between;
     gap: 2rem;
 
     a {

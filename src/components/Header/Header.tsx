@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
 import { FiExternalLink } from "react-icons/fi";
 import styles from "./Header.module.scss";
 
@@ -13,7 +13,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10); // Show when scrolling up or near the top
+      setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
       setPrevScrollPos(currentScrollPos);
     };
 
@@ -25,7 +25,7 @@ export default function Header() {
     <header
       className={`${styles.header} ${isVisible ? styles.show : styles.hide}`}
     >
-      <div className={styles.profile}>
+      <Link href="/" className={styles.profile}>
         <div className={styles.imageContainer}>
           <Image
             src="/medias/KienDang.webp"
@@ -36,41 +36,20 @@ export default function Header() {
           />
           <span className={styles.status}></span>
         </div>
-
         <div className={styles.name}>Kien Dang</div>
-      </div>
+      </Link>
       <nav className={styles.navLinks}>
-        <ScrollLink
-          to="about"
-          smooth={true}
-          duration={800}
-          spy={true}
-          offset={-100}
-        >
-          About me
-        </ScrollLink>
-        <ScrollLink
-          to="projects"
-          smooth={true}
-          duration={800}
-          spy={true}
-          offset={-100}
-        >
-          Projects
-        </ScrollLink>
-        <ScrollLink
-          to="contact"
-          smooth={true}
-          duration={800}
-          spy={true}
-          offset={-100}
-        >
-          Contact
-        </ScrollLink>
-        <a href="https://blog.kiendang.nl" className={styles.external}>
+        <Link href="/#about">About me</Link>
+        <Link href="/#projects">Projects</Link>
+        <Link href="/#contact">Contact</Link>
+        <Link href="/#blog">
           Blog
           <FiExternalLink />
-        </a>
+        </Link>
+        {/* <a href="https://blog.kiendang.nl" className={styles.external}>
+          Blog
+          <FiExternalLink />
+        </a> */}
       </nav>
     </header>
   );
