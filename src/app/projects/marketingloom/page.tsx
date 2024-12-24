@@ -1,27 +1,83 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../../page.module.scss";
+
+const browserImages = [
+  { src: "/medias/marketingloom/desktop/hero.webp", alt: "Browser mockup 1" },
+  {
+    src: "/medias/marketingloom/desktop/articles.webp",
+    alt: "Browser mockup 2",
+  },
+  { src: "/medias/marketingloom/desktop/events.webp", alt: "Browser mockup 3" },
+  {
+    src: "/medias/marketingloom/desktop/eventHero.webp",
+    alt: "Browser mockup 4",
+  },
+];
+
+const mobileImages = [
+  {
+    src: "/medias/marketingloom/mobile/hero.webp",
+    alt: "Mobile mockup 1",
+  },
+  {
+    src: "/medias/marketingloom/mobile/sidebar.webp",
+    alt: "Mobile mockup 2",
+  },
+  {
+    src: "/medias/marketingloom/mobile/footer.webp",
+    alt: "Mobile mockup 3",
+  },
+  {
+    src: "/medias/marketingloom/mobile/events.webp",
+    alt: "Mobile mockup 4",
+  },
+  {
+    src: "/medias/marketingloom/mobile/articles.webp",
+    alt: "Mobile mockup 5",
+  },
+  {
+    src: "/medias/marketingloom/mobile/articlepage.webp",
+    alt: "Mobile mockup 6",
+  },
+];
+
+const vector = ["/medias/marketingloom/Lines.svg"];
 
 export default function ProjectPage() {
   return (
     <div className={styles.container}>
       <main className={styles.project}>
-        <h1>Marketing Loom</h1>
+        <header className={styles.projectHeader}>
+          <h1>Marketing Loom</h1>
 
-        <div className={styles.tags}>
-          <span>DESIGN</span>
-          <span>DEVELOPMENT</span>
-          <span>CMS</span>
-        </div>
+          <div className={styles.tags}>
+            <span>DESIGN</span>
+            <span>DEVELOPMENT</span>
+            <span>CMS</span>
+          </div>
+        </header>
 
         <section className={styles.section}>
-          <h2>Given</h2>
-          <p>
-            No branding provided. Freedom to create a unique name, logo, and
-            visual identity.
-          </p>
+          <div>
+            <h2>Given</h2>
+            <p>
+              No branding provided. Freedom to create a unique name, logo, and
+              visual identity.
+            </p>
+          </div>
+          <div className={styles.vectors}>
+            {vector.map((path, index) => (
+              <object
+                key={index}
+                data={path}
+                type="image/svg+xml"
+                className={styles.vector}
+                aria-label={`Vector illustration ${index + 1}`}
+              ></object>
+            ))}
+          </div>
         </section>
 
         <section className={styles.section}>
@@ -29,7 +85,7 @@ export default function ProjectPage() {
           <p>
             Develop a responsive and dynamic news platform with a headless CMS.
             Include features like newsletter integration, an interactive events
-            calendar, and social sharing.
+            calendar, and social sharing. About
           </p>
         </section>
 
@@ -49,67 +105,43 @@ export default function ProjectPage() {
           </p>
         </section>
 
-        <div className={styles.browser}>
-          <div className={styles.browserHeader}>
-            <div className={styles.dot}></div>
-            <div className={styles.dot}></div>
-            <div className={styles.dot}></div>
-          </div>
-          <Image
-            src="/placeholder.svg?height=600&width=1000"
-            alt="Browser mockup"
-            width={1000}
-            height={600}
-          />
-        </div>
+        <section className={styles.desktop}>
+          {browserImages.map((image, index) => (
+            <div className={styles.browser} key={index}>
+              <div className={styles.browserHeader}>
+                <div className={styles.dot}></div>
+                <div className={styles.dot}></div>
+                <div className={styles.dot}></div>
+              </div>
+              <div className={styles.browserImage}>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  layout="responsive"
+                  width={612}
+                  height={344}
+                />
+              </div>
+            </div>
+          ))}
+        </section>
 
         <section className={styles.mobile}>
           <h2>Optimized for mobile</h2>
           <div className={styles.devices}>
-            <div className={styles.deviceGroup}>
-              <Image
-                src="/placeholder.svg?height=400&width=200"
-                alt="Mobile mockup 1"
-                width={200}
-                height={400}
-              />
-              <Image
-                src="/placeholder.svg?height=400&width=200"
-                alt="Mobile mockup 2"
-                width={200}
-                height={400}
-              />
-            </div>
-            <div className={styles.deviceGroup}>
-              <Image
-                src="/placeholder.svg?height=400&width=200"
-                alt="Mobile mockup 3"
-                width={200}
-                height={400}
-              />
-              <Image
-                src="/placeholder.svg?height=400&width=200"
-                alt="Mobile mockup 4"
-                width={200}
-                height={400}
-              />
-            </div>
+            {mobileImages.map((image, index) => (
+              <div className={styles.deviceGroup} key={index}>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={300}
+                  height={560}
+                />
+              </div>
+            ))}
           </div>
         </section>
       </main>
-
-      <svg
-        className={styles.decorativeLine}
-        viewBox="0 0 100 100"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0,50 Q25,0 50,50 T100,50"
-          fill="none"
-          stroke="white"
-          strokeWidth="0.5"
-        />
-      </svg>
     </div>
   );
 }

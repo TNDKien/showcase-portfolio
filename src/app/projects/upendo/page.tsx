@@ -4,34 +4,59 @@ import Image from "next/image";
 import styles from "../../page.module.scss";
 
 const browserImages = [
-  { src: "/medias/upendo.webp", alt: "Browser mockup 1" },
-  { src: "/medias/upendo.webp", alt: "Browser mockup 2" },
-  { src: "/medias/upendo.webp", alt: "Browser mockup 3" },
-  { src: "/medias/upendo.webp", alt: "Browser mockup 4" },
+  { src: "/medias/upendo/desktop/upendoHero.webp", alt: "Browser mockup 1" },
+  { src: "/medias/upendo/desktop/upendoMenu.webp", alt: "Browser mockup 2" },
+  { src: "/medias/upendo/desktop/upendoService.webp", alt: "Browser mockup 3" },
+  {
+    src: "/medias/upendo/desktop/upendoTraining.webp",
+    alt: "Browser mockup 4",
+  },
+  { src: "/medias/upendo/desktop/upendoBottom.webp", alt: "Browser mockup 5" },
 ];
 
 const mobileImages = [
-  { src: "/medias/upendo.webp", alt: "Mobile mockup 1" },
-  { src: "/placeholder.svg?height=400&width=200", alt: "Mobile mockup 2" },
-  { src: "/placeholder.svg?height=400&width=200", alt: "Mobile mockup 3" },
-  { src: "/placeholder.svg?height=400&width=200", alt: "Mobile mockup 4" },
+  { src: "/medias/upendo/mobile/upendoHero.webp", alt: "Mobile mockup 1" },
+  { src: "/medias/upendo/mobile/upendoMenu.webp", alt: "Mobile mockup 2" },
+  { src: "/medias/upendo/mobile/upendoService.webp", alt: "Mobile mockup 3" },
+  { src: "/medias/upendo/mobile/upendoTraining.webp", alt: "Mobile mockup 4" },
+  { src: "/medias/upendo/mobile/upendoBottom.webp", alt: "Mobile mockup 5" },
 ];
+
+const vector = ["/medias/upendo/Vector.svg"];
 
 export default function ProjectPage() {
   return (
     <div className={styles.container}>
       <main className={styles.project}>
-        <h1>Upendo</h1>
+        <header className={styles.projectHeader}>
+          <h1>Upendo</h1>
 
-        <div className={styles.tags}>
-          <span>DESIGN</span>
-          <span>DEVELOPMENT</span>
-          <span>CMS</span>
-        </div>
+          <div className={styles.tags}>
+            <span>DESIGN</span>
+            <span>DEVELOPMENT</span>
+            <span>CMS</span>
+          </div>
+        </header>
 
         <section className={styles.section}>
-          <h2>Given</h2>
-          <p>Branding Elements and Sitemap</p>
+          <div>
+            <h2>Given</h2>
+            <p>
+              No branding provided. Freedom to create a unique name, logo, and
+              visual identity.
+            </p>
+          </div>
+          <div className={styles.vectors}>
+            {vector.map((path, index) => (
+              <object
+                key={index}
+                data={path}
+                type="image/svg+xml"
+                className={styles.vector}
+                aria-label={`Vector illustration ${index + 1}`}
+              ></object>
+            ))}
+          </div>
         </section>
 
         <section className={styles.section}>
@@ -95,27 +120,14 @@ export default function ProjectPage() {
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  width={200}
-                  height={400}
+                  width={300}
+                  height={560}
                 />
               </div>
             ))}
           </div>
         </section>
       </main>
-
-      <svg
-        className={styles.decorativeLine}
-        viewBox="0 0 100 100"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0,50 Q25,0 50,50 T100,50"
-          fill="none"
-          stroke="white"
-          strokeWidth="0.5"
-        />
-      </svg>
     </div>
   );
 }
