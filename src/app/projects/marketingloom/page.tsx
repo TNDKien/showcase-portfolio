@@ -85,7 +85,7 @@ export default function ProjectPage() {
           <p>
             Develop a responsive and dynamic news platform with a headless CMS.
             Include features like newsletter integration, an interactive events
-            calendar, and social sharing. About
+            calendar, and social sharing.
           </p>
         </section>
 
