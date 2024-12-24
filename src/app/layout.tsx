@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Kien Dang",
   description: "ICT student and web developer",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/medias/favicon.ico",
   },
 };
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/medias/favicon.ico" />
         <link
           rel="preload"
           href="https://use.typekit.net/wyi4xkd.css"
