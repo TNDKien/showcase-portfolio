@@ -54,7 +54,6 @@ export function ProjectCard({
           alt={`Screenshot of ${title} project`}
           width={600}
           height={400}
-          priority
         />
       </div>
     </div>

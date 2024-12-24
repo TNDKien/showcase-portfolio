@@ -9,7 +9,7 @@ const projects = [
     tags: ["DESIGN", "DEVELOPMENT", "CMS"],
     description:
       "Created a responsive website for Upendo, a data services provider, to showcase their core offerings and engage SMEs and semi-governmental clients worldwide.",
-    imageUrl: "/medias/upendo.webp",
+    imageUrl: "/medias/upendo/desktop/upendoHero.webp",
     projectUrl: "/projects/upendo",
     liveUrl: "https://upendo-one.vercel.app/",
   },
@@ -18,7 +18,7 @@ const projects = [
     tags: ["DESIGN", "DEVELOPMENT", "CMS"],
     description:
       "Created a responsive website for 2manydots. They have given us the assignment to make a marketing news website.",
-    imageUrl: "/medias/marketingloom.webp",
+    imageUrl: "/medias/marketingloom/desktop/hero.webp",
     projectUrl: "/projects/marketingloom",
     liveUrl: "http://www.marketingloom.nl",
   },

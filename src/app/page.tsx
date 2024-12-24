@@ -1,7 +1,6 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
+"use client";
+
 import Hero from "../components/Hero/Hero";
-import Header from "../components/Header/Header";
 import About from "../components/About/About";
 import ProjectSection from "../components/Projects/ProjectSection";
 import Blog from "../components/Blog/Blog";
@@ -9,12 +8,21 @@ import Contact from "../components/Contact/Contact";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Hero />
-      <About />
-      <ProjectSection />
-      <Blog />
-      <Contact />
+      <section id="about">
+        <About />
+      </section>
+      <section id="projects">
+        <ProjectSection />
+      </section>
+      <section id="blog">
+        <Blog />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
     </div>
   );
 }
