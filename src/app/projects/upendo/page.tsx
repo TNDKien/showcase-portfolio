@@ -41,10 +41,7 @@ export default function ProjectPage() {
         <section className={styles.section}>
           <div>
             <h2>Given</h2>
-            <p>
-              No branding provided. Freedom to create a unique name, logo, and
-              visual identity.
-            </p>
+            <p>Branding Elements and Sitemap</p>
           </div>
           <div className={styles.vectors}>
             {vector.map((path, index) => (
