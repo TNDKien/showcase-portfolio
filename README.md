@@ -2,7 +2,7 @@
 
 [kiendang.nl](https://kiendang.nl)
 
-A modern, responsive portfolio website built with Next.js, showcasing my work as an ICT student and web developer.
+A modern portfolio website built with Next.js, showcasing my work as an ICT student and web developer.
 
 ## 📚 Table of Contents
 
