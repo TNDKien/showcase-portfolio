@@ -1,6 +1,6 @@
 "use client";
 
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import styles from "./Contact.module.scss";
 
 export default function Contact() {
@@ -10,33 +10,37 @@ export default function Contact() {
         <h1 className={styles.gradientText}>Contact</h1>
         <p>Get in touch with me via social media or send me an email</p>
 
-        <span>kien.tn.dang@gmail.com</span>
+        <a href="mailto:kien.tn.dang@gmail.com" className={styles.emailLink}>
+          <span>kien.tn.dang@gmail.com</span>
+        </a>
 
-        {/* Social Media Icons */}
         <div className={styles.socialIcons}>
           <a
             href="https://www.instagram.com/tnd_kien"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
+            className={styles.iconWrapper}
           >
-            <FaInstagram size={48} color="#800020" title="Instagram" />
+            <FaInstagram size={32} title="Instagram" className={styles.icon} />
           </a>
           <a
             href="https://www.linkedin.com/in/kien-dang-449887173"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
+            className={styles.iconWrapper}
           >
-            <FaLinkedin size={48} color="#5D3FD3" title="LinkedIn" />
+            <FaLinkedinIn size={32} title="LinkedIn" className={styles.icon} />
           </a>
           <a
             href="https://github.com/TNDKien"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
+            className={styles.iconWrapper}
           >
-            <FaGithub size={48} color="#5D3FD3" title="GitHub" />
+            <FaGithub size={32} title="GitHub" className={styles.icon} />
           </a>
         </div>
       </article>

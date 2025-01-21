@@ -31,6 +31,7 @@
         font-size: 32px;
         font-weight: bold;
         background: linear-gradient(25deg, $burgundy, $iris, $iris);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         display: inline;

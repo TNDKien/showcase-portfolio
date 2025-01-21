@@ -40,6 +40,7 @@
       #5a4fcf 60%,
       #5a4fcf 100%
     );
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
@@ -62,53 +63,73 @@
   }
   .socialIcons {
     display: flex;
-    gap: 24px;
-    margin-top: 24px;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 
-    a {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background-color: $onyx;
+  .iconWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease-in-out;
+    overflow: visible;
+    z-index: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        45deg,
+        $burgundy 0%,
+        $burgundy 10%,
+        $iris 70%,
+        $iris 100%
+      );
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+      z-index: 1;
       border-radius: 50%;
-      overflow: hidden;
-      transition: background-color 0.3s;
+    }
 
-      &:hover {
-        background-color: $onyx;
-      }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      background: linear-gradient(
+        45deg,
+        $burgundy 0%,
+        $burgundy 10%,
+        $iris 70%,
+        $iris 100%
+      );
+      filter: blur(20px);
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+      z-index: 0;
+      border-radius: 50%;
+    }
 
-      &:hover::before {
+    .icon {
+      position: relative;
+      z-index: 2;
+      color: $offWhite;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      &::before {
         opacity: 1;
       }
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          25deg,
-          $burgundy 0%,
-          $burgundy 10%,
-          $iris 60%,
-          $iris 100%
-        );
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      svg {
-        position: relative;
-        z-index: 1;
-        width: 24px;
-        height: 24px;
-        fill: $offWhite;
+      &::after {
+        opacity: 0.7;
       }
     }
   }
@@ -123,7 +144,16 @@
     $iris 60%,
     $iris 100%
   );
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
+}
+
+.emailLink {
+  text-decoration: none;
+
+  &:hover span::after {
+    width: 100%;
+  }
 }

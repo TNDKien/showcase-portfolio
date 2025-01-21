@@ -60,17 +60,19 @@
   }
 
   .image {
-    flex: 2; /* Ensure the image takes 2/3 of the width */
+    flex: 2;
     max-width: 66.667%;
     display: flex;
     justify-content: center;
 
-    img {
+    img,
+    video {
       width: 100%;
       height: auto;
       display: block;
       border-radius: 48px;
       max-height: 480px;
+      object-fit: cover;
     }
   }
 }
