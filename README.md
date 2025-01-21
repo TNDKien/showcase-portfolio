@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kien Dang Portfolio
 
-## Getting Started
+[kiendang.nl](https://kiendang.nl)
 
-First, run the development server:
+A modern, responsive portfolio website built with Next.js, showcasing my work as an ICT student and web developer.
+
+## 📚 Table of Contents
+
+- [Features](#-features)
+- [Built With](#-built-with)
+- [Design Elements](#-design-elements)
+- [Getting Started](#-getting-started)
+- [Contact](#-contact)
+
+## 🚀 Features
+
+- Skills showcase
+- Blog section (under maintenance)
+- Contact section with social media links
+- Modern gradient UI elements
+- Optimized images and performance
+
+## 🛠️ Built With
+
+- **Next.js**
+- **SCSS**
+- **TypeScript**
+- **React Icons**
+- **Lucide React**
+
+## 🎨 Design Elements
+
+- Interactive UI components
+- Sticky/pop-up navigation
+- Custom button animations
+- Color scheme:
+  - Onyx (`#121212`)
+  - Off White (`#F8F9FA`)
+  - Burgundy (`#800020`)
+  - Iris (`#5D3FD3`)
+
+## 📱 Sections
+
+1. **Hero** - Welcoming section with name and role
+2. **About** - Skills and professional background
+3. **Projects** - Showcase of work including:
+   - Marketing Loom
+   - Upendo
+4. **Blog** - Section for future blog posts
+5. **Contact** - Social media links and contact information
+
+## 💻 Skills Showcased
+
+- HTML5
+- CSS3
+- JavaScript
+- Figma
+- Adobe Illustrator
+- Adobe Photoshop
+- Next.js
+- Tailwind CSS
+- Storyblok
+- Sass/SCSS
+
+## 🔧 Development Approach
+
+1. Concept Development
+2. Version Control
+3. Iterative Improvements
+4. Agile Workflow
+5. Responsive Design
+
+## 📫 Contact
+
+- Email: kien.tn.dang@gmail.com
+- Instagram: [@tnd_kien](https://www.instagram.com/tnd_kien)
+- LinkedIn: [Kien Dang](https://www.linkedin.com/in/kien-dang-449887173)
+- GitHub: [TNDKien](https://github.com/TNDKien)
+
+## 🚀 Getting Started
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/TNDKien/portfolio.git
+```
+
+2. Run `npm install` to install the dependencies
+
+```bash
+npm install
+```
+
+3. Run `npm run dev` to start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Open [http://localhost:3000](http://localhost:3000) to view the website in the browser
