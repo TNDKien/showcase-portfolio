@@ -15,7 +15,7 @@ A modern portfolio website built with Next.js, showcasing my work as an ICT stud
 ## 🚀 Features
 
 - Skills showcase
-- Blog section (under maintenance)
+- Blog section
 - Contact section with social media links
 - Modern gradient UI elements
 - Optimized images and performance
