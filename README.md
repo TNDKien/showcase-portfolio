@@ -82,7 +82,7 @@ A modern portfolio website built with Next.js, showcasing my work as an ICT stud
 1. Clone the repository
 
 ```bash
-git clone https://github.com/TNDKien/portfolio.git
+git clone https://github.com/TNDKien/showcase-portfolio.git
 ```
 
 2. Run `npm install` to install the dependencies
