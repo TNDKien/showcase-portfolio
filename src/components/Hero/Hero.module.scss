@@ -7,6 +7,11 @@
   height: 100vh;
   background-color: $onyx;
   color: $offWhite;
+  padding: 0 24px;
+
+  @media (max-width: $tablet) {
+    padding: 0 16px;
+  }
 
   .content {
     display: flex;
@@ -15,6 +20,14 @@
     position: relative;
     width: 100%;
     padding: 0 2rem;
+
+    @media (min-width: $laptop) {
+      min-width: 1200px;
+    }
+
+    @media (max-width: $tablet) {
+      padding: 0 1rem;
+    }
 
     .leftBrace,
     .rightBrace {
@@ -33,30 +46,61 @@
       -webkit-background-clip: text;
       background-clip: text;
       margin-bottom: 48px;
+
+      @media (max-width: $tablet) {
+        -webkit-text-stroke: 6px transparent;
+        margin-bottom: 32px;
+      }
+
+      @media (max-width: $mobile) {
+        display: none;
+      }
     }
 
     .heroText {
       text-align: center;
-      min-width: 33%;
+      width: 38%;
+      padding: 0 1rem;
+
+      @media (max-width: $tablet) {
+        width: 50%;
+      }
+
+      @media (max-width: $mobile) {
+        width: 100%;
+        padding: 0;
+      }
 
       h2 {
-        font-size: clamp(16px, 3vw, 36px);
-        margin-bottom: 0.5rem;
+        font-size: clamp(24px, 4vw, 48px);
+        margin-bottom: 1rem;
         color: $offWhite;
+
+        @media (max-width: $mobile) {
+          font-size: clamp(20px, 3.5vw, 42px);
+        }
       }
 
       h1 {
-        font-size: clamp(32px, 6vw, 72px);
+        font-size: clamp(48px, 8vw, 96px);
         font-weight: bold;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         @extend .gradientText;
+
+        @media (max-width: $mobile) {
+          font-size: clamp(40px, 7vw, 84px);
+        }
       }
 
       .subtitle {
         font-family: "Degular Display", sans-serif;
-        font-size: clamp(16px, 3vw, 36px);
+        font-size: clamp(24px, 4vw, 48px);
         font-weight: 500;
         color: $offWhite;
+
+        @media (max-width: $mobile) {
+          font-size: clamp(20px, 3.5vw, 42px);
+        }
 
         span {
           @extend .gradientText;

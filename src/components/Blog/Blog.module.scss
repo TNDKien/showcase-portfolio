@@ -3,9 +3,13 @@
 .blogSection {
   max-width: 1248px;
   margin: 0 auto;
-
   background-color: $onyx;
   min-height: 80vh;
+  padding: 0 24px;
+
+  @media (max-width: $tablet) {
+    padding: 0 16px;
+  }
 
   .container {
     max-width: 1440px;
@@ -14,25 +18,40 @@
 
   .heading {
     color: #ffffff;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-size: 96px;
+    font-weight: 700;
+    margin-bottom: 96px;
+    padding-top: 96px;
+
+    @media (max-width: $tablet) {
+      font-size: 72px;
+      margin-bottom: 64px;
+      padding-top: 64px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 48px;
+      margin-bottom: 48px;
+      padding-top: 48px;
+    }
   }
 
   .blogWrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 96px;
+    padding-bottom: 192px;
 
-    @media (max-width: 1200px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: $tablet) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 64px;
+      padding-bottom: 96px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: $mobile) {
       grid-template-columns: 1fr;
+      gap: 48px;
+      padding-bottom: 64px;
     }
   }
 }

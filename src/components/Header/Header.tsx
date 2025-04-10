@@ -3,23 +3,40 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiMenu, FiX } from "react-icons/fi";
 import styles from "./Header.module.scss";
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
-      setPrevScrollPos(currentScrollPos);
+      if (!isMenuOpen) {
+        const currentScrollPos = window.scrollY;
+        setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+        setPrevScrollPos(currentScrollPos);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos]);
+  }, [prevScrollPos, isMenuOpen]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = "auto";
+  };
 
   return (
     <>
@@ -47,18 +64,31 @@ export default function Header() {
           </div>
           <div className={styles.name}>Kien Dang</div>
         </Link>
-        <nav className={styles.navLinks}>
-          <Link href="/#about">About me</Link>
-          <Link href="/#projects">Projects</Link>
-          <Link href="/#contact">Contact</Link>
-          <Link href="https://blog.kiendang.nl">
+
+        {/* Hamburger Menu Button */}
+        <button
+          className={styles.hamburger}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        </button>
+
+        {/* Navigation Links */}
+        <nav className={`${styles.navLinks} ${isMenuOpen ? styles.open : ""}`}>
+          <Link href="/#about" onClick={closeMenu}>
+            About me
+          </Link>
+          <Link href="/#projects" onClick={closeMenu}>
+            Projects
+          </Link>
+          <Link href="/#contact" onClick={closeMenu}>
+            Contact
+          </Link>
+          <Link href="https://blog.kiendang.nl" onClick={closeMenu}>
             Blog
             <FiExternalLink />
           </Link>
-          {/* <a href="https://blog.kiendang.nl" className={styles.external}>
-            Blog
-            <FiExternalLink />
-          </a> */}
         </nav>
       </header>
     </>

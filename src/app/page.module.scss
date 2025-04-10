@@ -6,6 +6,16 @@
   background: $onyx;
   color: $offWhite;
   padding: 2rem;
+
+  @media (max-width: $tablet) {
+    margin-top: 120px;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 100px;
+    padding: 1rem;
+  }
 }
 
 .project {
@@ -18,14 +28,38 @@
     align-items: center;
     margin-bottom: 4rem;
 
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
     h1 {
       font-size: 4rem;
       margin-bottom: 1rem;
+
+      @media (max-width: $tablet) {
+        font-size: 3rem;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 2.5rem;
+      }
     }
 
     .tags {
       display: flex;
       gap: 2rem;
+
+      @media (max-width: $tablet) {
+        gap: 1.5rem;
+      }
+
+      @media (max-width: $mobile) {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
 
       span {
         font-size: 32px;
@@ -35,16 +69,37 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         display: inline;
+
+        @media (max-width: $tablet) {
+          font-size: 28px;
+        }
+
+        @media (max-width: $mobile) {
+          font-size: 24px;
+        }
       }
     }
   }
 
   .section {
     margin-bottom: 4rem;
+    position: relative;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 3rem;
+    }
 
     h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
+
+      @media (max-width: $tablet) {
+        font-size: 1.75rem;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 1.5rem;
+      }
     }
 
     p,
@@ -52,6 +107,12 @@
       color: $offWhite;
       line-height: 2;
       max-width: 600px;
+      position: relative;
+      z-index: 1;
+
+      @media (max-width: $tablet) {
+        max-width: 100%;
+      }
     }
 
     .vectors {
@@ -61,12 +122,28 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      z-index: 0;
+
+      @media (max-width: $tablet) {
+        max-width: 100%;
+        opacity: 0.3;
+      }
+
+      @media (max-width: $mobile) {
+        max-width: 100%;
+        opacity: 0.2;
+      }
     }
   }
+
   .desktop {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
+
+    @media (max-width: $tablet) {
+      gap: 16px;
+    }
 
     .browser {
       width: 612px;
@@ -74,6 +151,12 @@
       border-radius: 8px;
       overflow: hidden;
       background: $offWhite;
+
+      @media (max-width: $tablet) {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+      }
 
       .browserHeader {
         display: flex;
@@ -113,9 +196,18 @@
   .mobile {
     margin-top: 6rem;
 
+    @media (max-width: $tablet) {
+      margin-top: 4rem;
+    }
+
     h2 {
       font-size: 2rem;
       margin-bottom: 2rem;
+
+      @media (max-width: $tablet) {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+      }
     }
 
     .devices {
@@ -124,13 +216,30 @@
       flex-grow: 1;
       gap: auto;
 
+      @media (max-width: $tablet) {
+        justify-content: center;
+      }
+
       .deviceGroup {
         display: flex;
         gap: 1rem;
 
+        @media (max-width: $tablet) {
+          flex-direction: column;
+          align-items: center;
+        }
+
         img {
           width: 300px;
           height: auto;
+
+          @media (max-width: $tablet) {
+            width: 250px;
+          }
+
+          @media (max-width: $mobile) {
+            width: 200px;
+          }
         }
       }
     }
@@ -145,4 +254,8 @@
   height: auto;
   opacity: 0.1;
   pointer-events: none;
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
 }

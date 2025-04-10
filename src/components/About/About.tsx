@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./About.module.scss";
-import { FaHtml5, FaCss3Alt, FaJs, FaFigma } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJs, FaFigma, FaGitAlt } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiNextdotjs,
@@ -11,6 +11,8 @@ import {
   SiStoryblok,
   SiAdobephotoshop,
   SiFlutter,
+  SiSupabase,
+  SiFirebase,
 } from "react-icons/si";
 import { cards } from "../../app/data/cards";
 import Card from "./Card";
@@ -22,17 +24,19 @@ const About = () => {
       <section className={styles.cardText}>
         <div className={styles.contentWrapper}>
           <p>
-            I am currently studying ICT&Media Design, specializing in creating
-            user-focused and visually engaging websites.
+            I am currently studying ICT&Smart Mobile, combining technical
+            expertise with creative design skills from my background in media
+            design.
           </p>
           <p>
-            I explore tools and methodologies such as Double Diamond, Scrum, and
-            UX testing to build interactive and validated concepts.
+            My studies focus on mobile application development, IoT
+            technologies, and creating seamless user experiences across
+            different platforms.
           </p>
           <p>
-            Right now, I'm focused on mastering frontend development, building
-            responsive designs, and making sure my websites are accessible for
-            everyone.
+            With two semesters of media design experience, I bring a strong
+            foundation in visual communication and user-centered design to my
+            technical projects.
           </p>
         </div>
         {/* Skills section */}
@@ -49,6 +53,9 @@ const About = () => {
           <SiStoryblok size={72} color="#03B4B0" title="Storyblok" />
           <SiSass size={72} color="#CC6699" title="Sass/SCSS" />
           <SiFlutter size={72} color="#02569B" title="Flutter" />
+          <FaGitAlt size={72} color="#F05032" title="Git" />
+          <SiSupabase size={72} color="#3ECF8E" title="Supabase" />
+          <SiFirebase size={72} color="#FFCA28" title="Firebase" />
         </div>
       </section>
 
