@@ -1,20 +1,19 @@
 @import "./styles/variables.scss";
+@import "./styles/container";
 
 .container {
   margin-top: 160px;
   min-height: 100vh;
   background: $onyx;
   color: $offWhite;
-  padding: 2rem;
+  @extend .sharedContainer;
 
   @media (max-width: $tablet) {
     margin-top: 120px;
-    padding: 1.5rem;
   }
 
   @media (max-width: $mobile) {
     margin-top: 100px;
-    padding: 1rem;
   }
 }
 
@@ -158,23 +157,22 @@
   .desktop {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 32px;
 
     @media (max-width: $tablet) {
-      gap: 16px;
+      gap: 24px;
     }
 
     .browser {
-      width: 612px;
-      height: 344px;
+      width: calc(50% - 32px);
+      height: auto;
+      aspect-ratio: 16/9;
       border-radius: 8px;
       overflow: hidden;
       background: $offWhite;
 
       @media (max-width: $tablet) {
         width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
       }
 
       .browserHeader {
@@ -206,6 +204,8 @@
       .browserImage {
         width: 100%;
         img {
+          width: 100%;
+          height: auto;
           border-radius: 0 0 8px 8px;
         }
       }

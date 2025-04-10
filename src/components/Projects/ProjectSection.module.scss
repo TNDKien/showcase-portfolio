@@ -1,19 +1,14 @@
 @import "app/styles/variables";
+@import "app/styles/container";
 
 .projectsSection {
   background-color: $onyx;
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 24px;
-
-  @media (max-width: $tablet) {
-    padding: 0 16px;
-  }
 
   .container {
-    max-width: 1248px;
-    width: 100%;
+    @extend .sharedContainer;
     display: flex;
     flex-direction: column;
     gap: 96px;
@@ -31,18 +26,15 @@
     color: #ffffff;
     font-size: 96px;
     font-weight: 700;
-    padding-top: 96px;
     margin: 0;
     text-align: start;
 
     @media (max-width: $tablet) {
       font-size: 72px;
-      padding-top: 64px;
     }
 
     @media (max-width: $mobile) {
       font-size: 48px;
-      padding-top: 48px;
     }
   }
 
