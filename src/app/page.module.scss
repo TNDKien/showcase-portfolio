@@ -83,7 +83,6 @@
 
   .section {
     margin-bottom: 4rem;
-    position: relative;
 
     @media (max-width: $tablet) {
       margin-bottom: 3rem;
@@ -107,11 +106,28 @@
       color: $offWhite;
       line-height: 2;
       max-width: 600px;
-      position: relative;
-      z-index: 1;
 
       @media (max-width: $tablet) {
         max-width: 100%;
+      }
+    }
+
+    .list {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+
+        &::before {
+          content: "•";
+          position: absolute;
+          left: 0;
+          color: $iris;
+        }
       }
     }
 
@@ -125,8 +141,11 @@
       z-index: 0;
 
       @media (max-width: $tablet) {
+        position: absolute;
+        right: 0;
         max-width: 100%;
         opacity: 0.3;
+        pointer-events: none;
       }
 
       @media (max-width: $mobile) {
